@@ -1,123 +1,107 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#171c18">
-<link rel="manifest" href="manifest.json">
-<title>TARKOV ASSISTANT</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#171c18"><link rel="manifest" href="manifest.json"><title>TARKOV ASSISTANT</title>
 <style>
-:root{--bg:#111612;--panel:#1b231d;--panel2:#242e26;--line:#39443a;--text:#e1e6dc;--muted:#9aa696;--olive:#b5c29b;--yellow:#d4b85c;--red:#c76b5c;--green:#8eaf7b}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#263127 0,#111612 55%);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
-header{padding:20px 16px 12px;border-bottom:1px solid var(--line);background:#151b16eF;position:sticky;top:0;z-index:3;backdrop-filter:blur(10px)}
-.brand{font-weight:900;letter-spacing:2px;font-size:20px}.sub{font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:4px}.mode{display:inline-block;color:#d7e1c9;background:#344331;border:1px solid #52624a;padding:5px 9px;border-radius:4px;font-size:10px;letter-spacing:1px;margin-top:10px}
-main{max-width:760px;margin:auto;padding:16px 14px 90px}.screen{display:none}.screen.active{display:block}.section-title{font-size:12px;letter-spacing:2px;color:var(--olive);font-weight:800;margin:8px 0 12px}
-.panel{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:8px;padding:15px;margin-bottom:12px;box-shadow:0 8px 25px #0003}
-.hero{padding:18px;background:linear-gradient(120deg,#303d30,#1a211b 75%)}.eyebrow{font-size:10px;color:var(--muted);letter-spacing:1.5px}.hero h1{font-size:23px;margin:8px 0 4px}.muted{color:var(--muted);font-size:13px;line-height:1.5}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tile{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:14px;text-align:left;color:var(--text);min-height:86px}.tile b{display:block;font-size:13px;letter-spacing:1px;margin-bottom:6px}.tile span{color:var(--muted);font-size:12px}
-button,.btn{background:#3c4938;color:#e5ebdd;border:1px solid #64735b;border-radius:5px;padding:10px 12px;font-weight:700;font-size:12px;letter-spacing:.5px;cursor:pointer}
-button.secondary{background:#242d26;border-color:var(--line)}button:disabled{opacity:.5}
-input,select{width:100%;background:#101611;color:var(--text);border:1px solid #52604f;border-radius:5px;padding:12px;font-size:14px;margin:7px 0}
-.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}.pill{font-size:10px;padding:4px 7px;border:1px solid var(--line);border-radius:20px;color:var(--muted);display:inline-block}
-.status{font-size:12px;padding:10px;border-left:3px solid var(--yellow);background:#2b2a1e;color:#ddd2a1;margin:10px 0;line-height:1.45}
-.status.good{border-color:var(--green);background:#1e2a20;color:#c8ddc2}.status.bad{border-color:var(--red);background:#2a201e;color:#e0b8ae}
-.item{padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.item strong{display:block;font-size:14px}.price{font-weight:800;color:#e4d69d;font-variant-numeric:tabular-nums;margin-top:5px}.small{font-size:11px;color:var(--muted);line-height:1.5}.mapname{font-size:22px;font-weight:900;margin:7px 0;color:var(--olive)}
-nav{position:fixed;bottom:0;left:0;right:0;background:#151b16f5;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 4px max(8px,env(safe-area-inset-bottom));z-index:5;backdrop-filter:blur(10px)}
-nav button{background:transparent;border:0;color:var(--muted);padding:7px 5px;font-size:10px;flex:1}nav button.active{color:var(--olive);background:#293329}
-a{color:var(--olive)}.hidden{display:none}
-@media(min-width:600px){main{padding-top:24px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-</style>
-</head>
-<body>
-<header><div class="brand">TARKOV <span style="color:var(--olive)">ASSISTANT</span></div><div class="sub">FIELD COMPANION / COMMUNITY DATA</div><div class="mode">PVE MODE · DEFAULT</div></header>
+:root{--bg:#111612;--p:#1b231d;--p2:#252f27;--line:#3b483d;--tx:#e2e7dd;--mut:#9ba797;--ol:#c0cba8;--yl:#d8bd68;--red:#c87968;--green:#92b582}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#283429 0,#111612 58%);color:var(--tx);font:14px system-ui,-apple-system,Segoe UI,sans-serif}
+header{position:sticky;top:0;z-index:4;padding:15px 15px 11px;background:#151c17ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.brand{font-size:19px;font-weight:900;letter-spacing:2px}.brand em{color:var(--ol);font-style:normal}.sub{font-size:9px;color:var(--mut);letter-spacing:2px;margin-top:3px}.mode{display:inline-block;margin-top:8px;padding:4px 8px;background:#354331;border:1px solid #58684e;color:#d9e2cf;border-radius:3px;font-size:9px;letter-spacing:1px}
+main{max-width:800px;margin:auto;padding:15px 13px 100px}.screen{display:none}.screen.active{display:block}.heading{font-size:11px;letter-spacing:2px;color:var(--ol);font-weight:900;margin:8px 0 12px}
+.panel{background:linear-gradient(145deg,var(--p2),var(--p));border:1px solid var(--line);border-radius:7px;padding:14px;margin-bottom:11px}.hero{background:linear-gradient(115deg,#344332,#1a211b 78%);padding:18px}.eyebrow{font-size:9px;color:var(--mut);letter-spacing:1.5px}.hero h1{font-size:23px;margin:7px 0}.muted{color:var(--mut);font-size:12px;line-height:1.5}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.tile{background:var(--p);border:1px solid var(--line);color:var(--tx);border-radius:6px;padding:13px;text-align:left;min-height:82px}.tile b{display:block;font-size:12px;letter-spacing:.8px;margin-bottom:5px}.tile span{color:var(--mut);font-size:11px}
+button,.btn{background:#3d4b39;color:#e6ecdf;border:1px solid #68775f;border-radius:4px;padding:10px 12px;font-weight:750;font-size:11px;letter-spacing:.5px;cursor:pointer}button.secondary{background:#222c24;border-color:var(--line)}button.danger{background:#3a2925;border-color:#775248}
+input,select,textarea{width:100%;background:#101611;color:var(--tx);border:1px solid #53614f;border-radius:4px;padding:11px;font:inherit;margin:6px 0}
+.row{display:flex;gap:7px;align-items:center}.row>*{flex:1}.tag{font-size:9px;padding:4px 7px;border:1px solid var(--line);border-radius:20px;color:var(--mut);display:inline-block}
+.status{font-size:11px;padding:9px;border-left:3px solid var(--yl);background:#2b2a1e;color:#e0d39e;margin:9px 0;line-height:1.5}.status.good{border-color:var(--green);background:#1d2b20;color:#c9ddc2}.status.bad{border-color:var(--red);background:#2b211f;color:#e3b8ae}
+.item{padding:10px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.item strong{display:block;font-size:13px}.price{font-weight:850;color:#e7d89f;margin-top:4px;font-variant-numeric:tabular-nums}.tiny{font-size:10px;color:var(--mut);line-height:1.45}
+.check{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}.check input{width:auto;margin:2px 0;accent-color:#a9ba8c}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:5;background:#151c17f5;border-top:1px solid var(--line);display:flex;overflow-x:auto;padding:6px 3px max(7px,env(safe-area-inset-bottom));backdrop-filter:blur(10px)}
+nav button{flex:1;min-width:65px;background:transparent;border:0;color:var(--mut);padding:6px 2px;font-size:9px;line-height:1.6}nav button.active{color:var(--ol);background:#2a352b}
+a{color:var(--ol)}.mapcard{padding:12px;border:1px solid var(--line);border-radius:5px;background:#1a221c;margin:8px 0}.mapcard b{display:block;margin-bottom:5px}.bar{height:7px;background:#101611;border-radius:8px;overflow:hidden;margin-top:7px}.bar i{display:block;height:100%;background:#aabd8d;width:40%}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style></head><body>
+<header><div class="brand">TARKOV <em>ASSISTANT</em></div><div class="sub">FIELD COMPANION / COMMUNITY INTELLIGENCE</div><span class="mode">PVE MODE · DEFAULT</span></header>
 <main>
 <section id="home" class="screen active">
- <div class="panel hero"><div class="eyebrow">OPERATOR TERMINAL / 01</div><h1>Подготовка к рейду</h1><div class="muted">Справочник и рыночная информация для PvE.</div></div>
- <div class="section-title">ОПЕРАТИВНЫЕ МОДУЛИ</div>
- <div class="grid">
-  <button class="tile" onclick="show('goons')"><b>◉ GOONS TRACKER</b><span>Последнее сообщение о встрече</span></button>
-  <button class="tile" onclick="show('market')"><b>▦ FLEA MARKET</b><span>Цены и поиск предметов PvE</span></button>
-  <button class="tile" onclick="show('notes')"><b>▤ NOTES</b><span>Личные заметки рейдов</span></button>
-  <button class="tile" onclick="show('about')"><b>⌁ DATA STATUS</b><span>Источники и точность данных</span></button>
- </div>
- <div class="section-title" style="margin-top:20px">СВОДКА</div>
- <div class="panel"><div class="row"><div><div class="eyebrow">GOONS / PVE</div><strong id="homeGoons">Загрузка…</strong></div><button class="secondary" onclick="loadGoons()">ОБНОВИТЬ</button></div><div class="small" id="homeGoonsTime">Последний отчёт сообщества</div></div>
- <div class="panel"><div class="eyebrow">FLEA / PVE</div><strong>Поиск цен на предметы</strong><div class="small">Рыночные данные могут обновляться с задержкой; проверяй время обновления.</div><button style="margin-top:10px" onclick="show('market')">ОТКРЫТЬ РЫНОК</button></div>
+ <div class="panel hero"><div class="eyebrow">OPERATOR TERMINAL / 01</div><h1>Подготовка к рейду</h1><div class="muted">Твой PvE-компаньон: разведка, экономика, задания и снаряжение.</div><div class="row" style="margin-top:13px"><button onclick="show('voice')">🎙 ГОЛОСОВОЙ ПОМОЩНИК</button><button class="secondary" onclick="show('loadout')">ПОДГОТОВКА</button></div></div>
+ <div class="heading">ОПЕРАТИВНЫЕ МОДУЛИ</div><div class="grid">
+ <button class="tile" onclick="show('goons')"><b>◉ GOONS TRACKER</b><span>Последние сообщения о встречах</span></button>
+ <button class="tile" onclick="show('market')"><b>▦ FLEA MARKET</b><span>Цены PvE и избранное</span></button>
+ <button class="tile" onclick="show('maps')"><b>⌖ MAP INTEL</b><span>Карты и точки интереса</span></button>
+ <button class="tile" onclick="show('quests')"><b>▤ QUEST LOG</b><span>Задания и личный прогресс</span></button>
+ <button class="tile" onclick="show('loot')"><b>▣ LOOT DATABASE</b><span>Поиск предметов и список нужного</span></button>
+ <button class="tile" onclick="show('bosses')"><b>◈ BOSS DOSSIER</b><span>Досье боссов и охраны</span></button>
+ <button class="tile" onclick="show('loadout')"><b>🎒 LOADOUT</b><span>Чек-лист перед рейдом</span></button>
+ <button class="tile" onclick="show('alerts')"><b>🔔 PRICE ALERTS</b><span>Избранное и пороги цены</span></button>
+ <button class="tile" onclick="show('voice')"><b>🎙 VOICE</b><span>Голосовые команды</span></button></div>
+ <div class="heading" style="margin-top:18px">СВОДКА РАЗВЕДКИ</div><div class="panel"><div class="eyebrow">GOONS / PVE</div><b id="homeGoons">Загрузка…</b><div class="tiny" id="homeGoonsTime">Последний community-отчёт</div><button class="secondary" style="margin-top:8px" onclick="loadGoons()">ОБНОВИТЬ</button></div>
+ <div class="panel"><div class="eyebrow">MARKET / PVE</div><b>Цены предметов</b><div class="tiny">Открой барахолку, чтобы искать цены, сохранять избранное и задавать ценовые ориентиры.</div></div>
 </section>
 
-<section id="goons" class="screen">
- <div class="section-title">GOONS TRACKER / PVE</div>
- <div class="panel">
-  <div class="eyebrow">ПОСЛЕДНЕЕ СООБЩЕНИЕ СООБЩЕСТВА</div>
-  <div class="mapname" id="goonMap">Загрузка…</div>
-  <div class="muted" id="goonTime">Запрашиваем данные…</div>
-  <div id="goonFresh" class="status">Проверяем свежесть отчёта…</div>
-  <button onclick="loadGoons()">ОБНОВИТЬ ДАННЫЕ</button>
- </div>
- <div class="panel"><div class="section-title">КАК ЧИТАТЬ ДАННЫЕ</div><p class="muted">Это последнее пользовательское сообщение, а не подтверждение от игровых серверов. Оно не гарантирует, что Гуны находятся там сейчас или появятся в следующем рейде. Чем старше отчёт, тем меньше он полезен.</p></div>
-</section>
+<section id="goons" class="screen"><div class="heading">GOONS TRACKER / PVE</div><div class="panel"><div class="eyebrow">ПОСЛЕДНЕЕ СООБЩЕНИЕ СООБЩЕСТВА</div><h2 id="goonMap">Загрузка…</h2><div class="muted" id="goonTime"></div><div id="goonFresh" class="status">Проверяем отчёт…</div><button onclick="loadGoons()">ОБНОВИТЬ ОТЧЁТ</button></div><div class="panel"><b>Важно</b><p class="muted">Это последнее сообщение сообщества, а не телеметрия игровых серверов. Оно не подтверждает, где Гуны находятся прямо сейчас и где появятся в следующем рейде. Старые сообщения помечаются как устаревшие.</p></div></section>
 
-<section id="market" class="screen">
- <div class="section-title">FLEA MARKET / PVE</div>
- <div class="panel">
-  <div class="eyebrow">ПОИСК ПРЕДМЕТА</div>
-  <input id="search" placeholder="Например: LEDX, ключ, фильтр…" autocomplete="off">
-  <div class="row"><button onclick="searchMarket()">НАЙТИ</button><button class="secondary" onclick="document.getElementById('search').value='';searchMarket()">ПОКАЗАТЬ ПОПУЛЯРНОЕ</button></div>
-  <div class="small" style="margin-top:8px">Отображаются невооружённые категории предметов. Данные PvE, не PvP.</div>
- </div>
- <div id="marketStatus" class="status">Нажми «НАЙТИ», чтобы загрузить цены.</div>
- <div class="panel"><div id="marketResults"><div class="muted">Результаты появятся здесь.</div></div></div>
-</section>
+<section id="market" class="screen"><div class="heading">FLEA MARKET / PVE</div><div class="panel"><div class="eyebrow">ПОИСК ПРЕДМЕТА</div><input id="marketSearch" placeholder="Название предмета: LEDX, ключ, фильтр…"><div class="row"><button onclick="searchMarket()">НАЙТИ</button><button class="secondary" onclick="document.getElementById('marketSearch').value='';searchMarket()">ПОПУЛЯРНОЕ</button></div><div class="tiny">Режим PvE. Цены предложений могут отличаться от цены фактической сделки.</div></div><div id="marketStatus" class="status">Выполни поиск, чтобы получить рыночные данные.</div><div class="panel" id="marketResults">Результаты появятся здесь.</div></section>
 
-<section id="notes" class="screen">
- <div class="section-title">FIELD NOTES</div>
- <div class="panel"><div class="eyebrow">ЛИЧНЫЕ ЗАМЕТКИ</div><textarea id="note" rows="5" style="width:100%;background:#101611;color:var(--text);border:1px solid #52604f;border-radius:5px;padding:12px" placeholder="Например: что проверить перед следующим рейдом…"></textarea><button onclick="saveNote()">СОХРАНИТЬ ЗАМЕТКУ</button><div id="savedNote" class="muted" style="margin-top:10px"></div></div>
-</section>
+<section id="maps" class="screen"><div class="heading">MAP INTEL / КАРТЫ</div><div class="panel"><label class="eyebrow" for="mapSelect">ВЫБЕРИ ЛОКАЦИЮ</label><select id="mapSelect" onchange="renderMap()"><option value="customs">Таможня / Customs</option><option value="shoreline">Берег / Shoreline</option><option value="woods">Лес / Woods</option><option value="interchange">Развязка / Interchange</option><option value="reserve">Резерв / Reserve</option><option value="lighthouse">Маяк / Lighthouse</option><option value="streets">Улицы Таркова / Streets</option><option value="groundzero">Эпицентр / Ground Zero</option><option value="factory">Завод / Factory</option><option value="labs">Лаборатория / The Lab</option></select><div id="mapInfo"></div></div><div class="panel"><b>Личные отметки</b><textarea id="mapNote" rows="3" placeholder="Запиши свои ориентиры, заметки по выходам или цели рейда…"></textarea><button onclick="saveMapNote()">СОХРАНИТЬ ЗАМЕТКУ К КАРТЕ</button><div id="mapSaved" class="tiny"></div></div></section>
 
-<section id="about" class="screen">
- <div class="section-title">DATA STATUS</div>
- <div class="panel"><b>Источники данных</b><p class="muted">Рыночные цены и сведения о Гунах загружаются из общественного API TarkovStammtisch, который использует данные сообщества и Tarkov.dev.</p><p class="small">API: api.tarkov-stammtisch.de · режим PvE · данные не являются официальной телеметрией игровых серверов.</p><p class="muted">Если источник недоступен, приложение покажет ошибку, а не выдуманные значения.</p></div>
- <div class="panel"><b>Обновление</b><p class="muted">Цены, согласно документации API, обновляются примерно каждые 5–10 минут. Данные о Гунах — по последнему сообщению сообщества; частота синхронизации около минуты.</p></div>
-</section>
+<section id="quests" class="screen"><div class="heading">QUEST LOG / МОИ ЗАДАНИЯ</div><div class="panel"><div class="eyebrow">ДОБАВИТЬ ЗАДАНИЕ</div><input id="questInput" placeholder="Название квеста"><div class="row"><button onclick="addQuest()">ДОБАВИТЬ</button><button class="secondary" onclick="clearDone()">УДАЛИТЬ ВЫПОЛНЕННЫЕ</button></div><div class="tiny">Список хранится локально на этом устройстве. Встроенная база заданий будет добавлена отдельно.</div></div><div class="panel"><div id="questList"></div></div></section>
+
+<section id="loot" class="screen"><div class="heading">LOOT DATABASE / ПРЕДМЕТЫ</div><div class="panel"><b>Найти предмет</b><input id="lootSearch" placeholder="Введи название предмета"><button onclick="lootSearch()">ИСКАТЬ В БАРАХОЛКЕ</button><p class="tiny">Поиск использует рыночный модуль PvE. Для квестовых требований можно сохранять собственный список нужных предметов.</p></div><div class="panel"><b>Мой список нужного</b><input id="needInput" placeholder="Предмет, который нужно найти"><button onclick="addNeed()">ДОБАВИТЬ В СПИСОК</button><div id="needList"></div></div></section>
+
+<section id="bosses" class="screen"><div class="heading">BOSS DOSSIER / ДОСЬЕ</div><div class="panel"><div class="eyebrow">ВЫБЕРИ ПЕРСОНАЖА</div><select id="bossSelect" onchange="renderBoss()"><option value="goons">Отряд Гунов</option><option value="reshala">Ресала</option><option value="sanitar">Санитар</option><option value="shturman">Штурман</option><option value="tagilla">Тагилла</option><option value="killa">Килла</option><option value="glukhar">Глухарь</option><option value="cultists">Культисты</option></select><div id="bossInfo"></div></div><div class="panel"><p class="muted">Досье содержит общую игровую справку. Конкретные шансы появления и поведение могут меняться с обновлениями игры; непроверенные значения не показываем.</p></div></section>
+
+<section id="loadout" class="screen"><div class="heading">LOADOUT / ПОДГОТОВКА К РЕЙДУ</div><div class="panel"><div class="eyebrow">МОЙ ЧЕК-ЛИСТ</div><div id="loadoutList"></div><div class="bar"><i id="loadoutBar"></i></div><div class="tiny" id="loadoutProgress"></div><button class="secondary" style="margin-top:10px" onclick="resetLoadout()">СБРОСИТЬ ОТМЕТКИ</button></div><div class="panel"><b>Цель рейда</b><select id="raidGoal"><option>Выполнить квест</option><option>Найти предметы</option><option>Проверить сообщение о Гунах</option><option>Исследовать локацию</option><option>Спокойно собрать лут и выйти</option></select><textarea id="raidMemo" rows="3" placeholder="Что не забыть в этом рейде?"></textarea><button onclick="saveRaid()">СОХРАНИТЬ ПЛАН</button><div class="tiny" id="raidSaved"></div></div></section>
+
+<section id="alerts" class="screen"><div class="heading">PRICE ALERTS / ИЗБРАННОЕ</div><div class="panel"><b>Сохранённые предметы</b><div id="favorites"></div><p class="tiny">Добавляй предметы из результатов барахолки. Здесь можно задать желаемую цену; браузер проверяет её только при открытом приложении и доступном API.</p></div><div class="panel"><b>Уведомления</b><button onclick="enableNotifications()">РАЗРЕШИТЬ УВЕДОМЛЕНИЯ</button><div class="tiny" id="notifyStatus"></div></div></section>
+
+<section id="voice" class="screen"><div class="heading">VOICE ASSISTANT / ГОЛОСОВОЕ УПРАВЛЕНИЕ</div><div class="panel"><div class="eyebrow">КОМАНДНЫЙ КАНАЛ</div><p class="muted">Нажми кнопку и скажи, что хочешь открыть или найти. Распознавание выполняется средствами браузера Android.</p><button style="width:100%;padding:16px" onclick="startVoice()">🎙 НАЧАТЬ СЛУШАТЬ</button><div class="status" id="voiceStatus">Ожидаю команду.</div><input id="voiceText" placeholder="Или напиши команду текстом"><button onclick="runVoiceText()">ВЫПОЛНИТЬ КОМАНДУ</button></div><div class="panel"><b>Примеры команд</b><p class="muted">«Открой барахолку» · «Найди LEDX» · «Покажи Гунов» · «Открой карты» · «Подготовка к рейду» · «Открой квесты».</p></div></section>
+
+<section id="notes" class="screen"><div class="heading">FIELD NOTES</div><div class="panel"><textarea id="generalNote" rows="6" placeholder="Личные заметки…"></textarea><button onclick="saveGeneralNote()">СОХРАНИТЬ</button><div class="tiny" id="generalSaved"></div></div></section>
 </main>
 <nav>
- <button class="active" data-page="home" onclick="show('home')">⌂<br>ГЛАВНАЯ</button>
- <button data-page="goons" onclick="show('goons')">◉<br>ГУНЫ</button>
- <button data-page="market" onclick="show('market')">▦<br>БАРАХОЛКА</button>
- <button data-page="notes" onclick="show('notes')">▤<br>ЗАМЕТКИ</button>
+<button class="active" data-page="home" onclick="show('home')">⌂<br>ГЛАВНАЯ</button><button data-page="goons" onclick="show('goons')">◉<br>ГУНЫ</button><button data-page="market" onclick="show('market')">▦<br>РЫНОК</button><button data-page="maps" onclick="show('maps')">⌖<br>КАРТЫ</button><button data-page="quests" onclick="show('quests')">▤<br>КВЕСТЫ</button><button data-page="voice" onclick="show('voice')">🎙<br>ГОЛОС</button>
 </nav>
 <script>
 const API='https://api.tarkov-stammtisch.de';
-function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='goons')loadGoons();if(id==='market'&&!document.getElementById('marketResults').dataset.loaded)searchMarket();}
-function fmtDate(s){try{return new Date(s).toLocaleString('ru-RU',{dateStyle:'short',timeStyle:'short'})}catch(e){return s||'—'}}
-function ageText(s){const mins=Math.max(0,Math.floor((Date.now()-new Date(s).getTime())/60000));if(!Number.isFinite(mins))return 'Время неизвестно';if(mins<60)return mins+' мин. назад';if(mins<1440)return Math.floor(mins/60)+' ч. назад';return Math.floor(mins/1440)+' дн. назад'}
-async function loadGoons(){
- const map=document.getElementById('goonMap'),time=document.getElementById('goonTime'),fresh=document.getElementById('goonFresh');
- map.textContent='Загрузка…';time.textContent='';fresh.className='status';fresh.textContent='Получаем последнее сообщение…';
- try{const r=await fetch(API+'/api/goons?mode=pve',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();
- if(!d||!d.location||!d.timestamp)throw Error('Нет свежих сообщений в ответе');
- map.textContent=d.location;time.textContent='Отчёт: '+fmtDate(d.timestamp)+' · '+ageText(d.timestamp)+' · источник: '+(d.source||'сообщество');
- const m=(Date.now()-new Date(d.timestamp).getTime())/60000;
- fresh.className='status '+(m<30?'good':m<120?'':'bad');
- fresh.textContent=m<30?'СВЕЖИЙ ОТЧЁТ · меньше 30 минут. Это всё ещё не гарантия спавна.':m<120?'ОТЧЁТ УСТАРЕВАЕТ · проверь дату и другие сообщения.':'СТАРЫЙ ОТЧЁТ · не полагайся на него при выборе карты.';
- document.getElementById('homeGoons').textContent=d.location;document.getElementById('homeGoonsTime').textContent=ageText(d.timestamp)+' · '+fmtDate(d.timestamp);
- }catch(e){map.textContent='НЕТ ДАННЫХ';time.textContent='Источник временно недоступен: '+e.message;fresh.className='status bad';fresh.textContent='Не удалось получить подтверждённый отчёт. Попробуй позже.';document.getElementById('homeGoons').textContent='Нет данных';document.getElementById('homeGoonsTime').textContent='Не удалось обновить';}
-}
-function safeText(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function allowedItem(x){const cats=(x.category||[]).map(c=>(c.name||'').toLowerCase());const bad=['weapon','ammo','ammunition','melee','weapon parts','functional mods','modifications'];return !cats.some(c=>bad.some(b=>c.includes(b)))}
-async function searchMarket(){
- const q=document.getElementById('search').value.trim(),status=document.getElementById('marketStatus'),out=document.getElementById('marketResults');
- status.className='status';status.textContent='Загружаем PvE-цены…';out.innerHTML='';
- try{const url=API+'/api/fleaprice/items?game=pve&limit=100'+(q?'&search='+encodeURIComponent(q):'');const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();const arr=(d.data||[]).filter(allowedItem);
- if(!arr.length){status.textContent='Ничего не найдено. Попробуй другое название.';return}
- status.className='status good';status.textContent='PvE · '+arr.length+' подходящих результатов · источник: '+(d.meta?.source||'API')+' · обновление: '+fmtDate(d.meta?.lastSync);
- out.innerHTML=arr.slice(0,40).map(x=>{const p=x.price||{};const cat=(x.category||[]).map(c=>c.name).join(' / ');return `<div class="item"><strong>${safeText(x.name)}</strong><div class="small">${safeText(cat)} · предложений: ${p.listingCount??'—'} ${x.isLowConfidence?'· низкая уверенность':''}</div><div class="price">Мин. ${Number(p.minPrice||0).toLocaleString('ru-RU')} ₽ · Средняя ${Number(p.avgPrice||0).toLocaleString('ru-RU')} ₽</div><div class="small">Диапазон до ${Number(p.maxPrice||0).toLocaleString('ru-RU')} ₽ · обновлено ${fmtDate(p.updatedAt)}</div></div>`}).join('');
- out.dataset.loaded='1';
- }catch(e){status.className='status bad';status.textContent='Не удалось загрузить цены: '+e.message+'. Проверь интернет и повтори.';out.innerHTML='';}
-}
-function saveNote(){const v=document.getElementById('note').value;try{localStorage.setItem('ta_note',v);document.getElementById('savedNote').textContent='Заметка сохранена на этом устройстве.'}catch(e){document.getElementById('savedNote').textContent='Не удалось сохранить заметку.'}}
-try{document.getElementById('note').value=localStorage.getItem('ta_note')||''}catch(e){}
-if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-loadGoons();
-</script>
-</body></html>
+const $=id=>document.getElementById(id);
+function read(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}}
+function write(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='goons')loadGoons();if(id==='market'&&!$('marketResults').dataset.loaded)searchMarket();if(id==='maps')renderMap();if(id==='quests')renderQuests();if(id==='bosses')renderBoss();if(id==='loadout')renderLoadout();if(id==='alerts')renderFavorites();if(id==='notes')$('generalNote').value=read('ta_general','')}
+function date(s){try{return new Date(s).toLocaleString('ru-RU',{dateStyle:'short',timeStyle:'short'})}catch(e){return s||'—'}}
+function age(s){let n=Math.floor((Date.now()-new Date(s).getTime())/60000);return !Number.isFinite(n)?'время неизвестно':n<60?n+' мин. назад':n<1440?Math.floor(n/60)+' ч. назад':Math.floor(n/1440)+' дн. назад'}
+async function loadGoons(){let m=$('goonMap'),t=$('goonTime'),f=$('goonFresh');m.textContent='Загрузка…';f.textContent='Получаем сообщение сообщества…';try{let r=await fetch(API+'/api/goons?mode=pve',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);let d=await r.json();if(!d.location||!d.timestamp)throw Error('Нет отчёта');m.textContent=d.location;t.textContent='Отчёт '+date(d.timestamp)+' · '+age(d.timestamp)+' · '+(d.source||'сообщество');let mins=(Date.now()-new Date(d.timestamp))/60000;f.className='status '+(mins<30?'good':mins<120?'':'bad');f.textContent=mins<30?'СВЕЖИЙ ОТЧЁТ. Не является гарантией спавна.':mins<120?'ОТЧЁТ УСТАРЕВАЕТ. Сверь другие сообщения.':'СТАРЫЙ ОТЧЁТ. Не полагайся на него.';$('homeGoons').textContent=d.location;$('homeGoonsTime').textContent=age(d.timestamp)+' · '+date(d.timestamp)}catch(e){m.textContent='НЕТ ДАННЫХ';t.textContent='Источник недоступен: '+e.message;f.className='status bad';f.textContent='Не удалось получить подтверждённый отчёт.';$('homeGoons').textContent='Нет данных';$('homeGoonsTime').textContent='Не удалось обновить'}}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+async function searchMarket(q){q=q??$('marketSearch').value.trim();$('marketStatus').textContent='Загружаем цены PvE…';$('marketResults').innerHTML='';try{let r=await fetch(API+'/api/fleaprice/items?game=pve&limit=100'+(q?'&search='+encodeURIComponent(q):''),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);let d=await r.json(),arr=d.data||[];if(!arr.length){$('marketStatus').textContent='Ничего не найдено.';return}$('marketStatus').className='status good';$('marketStatus').textContent='PvE · '+arr.length+' результатов · обновлено '+date(d.meta?.lastSync);$('marketResults').innerHTML=arr.slice(0,50).map(x=>{let p=x.price||{};return `<div class="item"><strong>${esc(x.name)}</strong><div class="price">Мин. ${Number(p.minPrice||0).toLocaleString('ru-RU')} ₽ · Средняя ${Number(p.avgPrice||0).toLocaleString('ru-RU')} ₽ · Макс. ${Number(p.maxPrice||0).toLocaleString('ru-RU')} ₽</div><div class="tiny">Предложений: ${p.listingCount??'—'} · Обновлено ${date(p.updatedAt)}</div><div class="row" style="margin-top:6px"><button class="secondary" onclick="favorite('${esc(x.id||x.name)}','${esc(x.name)}')">☆ В ИЗБРАННОЕ</button><button class="secondary" onclick="setTarget('${esc(x.id||x.name)}','${esc(x.name)}')">ЗАДАТЬ ЦЕНУ</button></div></div>`}).join('');$('marketResults').dataset.loaded='1'}catch(e){$('marketStatus').className='status bad';$('marketStatus').textContent='Не удалось загрузить цены: '+e.message+'. Проверь соединение и повтори.'}}
+function favorite(id,name){let a=read('ta_favs',[]);if(!a.some(x=>x.id===id))a.push({id,name,target:0});write('ta_favs',a);alert('Добавлено в избранное');}
+function setTarget(id,name){let v=prompt('Желаемая цена в рублях для '+name+':');if(v===null)return;let a=read('ta_favs',[]),x=a.find(x=>x.id===id);if(!x){x={id,name,target:0};a.push(x)}x.target=Math.max(0,Number(v)||0);write('ta_favs',a);alert('Ценовой ориентир сохранён. Проверка работает при открытом приложении.')}
+function renderFavorites(){let a=read('ta_favs',[]);$('favorites').innerHTML=a.length?a.map(x=>`<div class="item"><b>${esc(x.name)}</b><div class="tiny">Ценовой ориентир: ${x.target?x.target.toLocaleString('ru-RU')+' ₽':'не задан'}</div><button class="secondary" onclick="removeFav('${esc(x.id)}')">УДАЛИТЬ</button></div>`).join(''):'<p class="muted">Пока нет избранных предметов.</p>'}
+function removeFav(id){write('ta_favs',read('ta_favs',[]).filter(x=>x.id!==id));renderFavorites()}
+async function enableNotifications(){if(!('Notification'in window)){$('notifyStatus').textContent='Браузер не поддерживает уведомления.';return}let p=await Notification.requestPermission();$('notifyStatus').textContent=p==='granted'?'Уведомления разрешены. Автоматическая фоновая проверка пока не включена.':'Разрешение не получено.'}
+const maps={customs:['Таможня / Customs','Таможня — промышленная локация с несколькими зонами интереса.'],shoreline:['Берег / Shoreline','Берег — большая локация с курортом и протяжёнными открытыми участками.'],woods:['Лес / Woods','Лес — обширная природная локация.'],interchange:['Развязка / Interchange','Развязка — торговый комплекс и прилегающая территория.'],reserve:['Резерв / Reserve','Резерв — военная база с подземными зонами.'],lighthouse:['Маяк / Lighthouse','Маяк — прибрежная локация.'],streets:['Улицы Таркова / Streets','Городская локация с кварталами и зданиями.'],groundzero:['Эпицентр / Ground Zero','Эпицентр — стартовая городская локация.'],factory:['Завод / Factory','Компактная промышленная локация.'],labs:['Лаборатория / The Lab','Закрытая подземная лаборатория.']};
+function renderMap(){let k=$('mapSelect').value,m=maps[k];$('mapInfo').innerHTML=`<div class="mapcard"><b>${m[0]}</b><p class="muted">${m[1]}</p><a target="_blank" rel="noopener" href="https://mapgenie.io/tarkov/maps/${k}">Открыть интерактивную карту ↗</a></div>`;$('mapNote').value=read('ta_map_'+k,'')}
+function saveMapNote(){write('ta_map_'+$('mapSelect').value,$('mapNote').value);$('mapSaved').textContent='Заметка сохранена на устройстве.'}
+function addQuest(){let v=$('questInput').value.trim();if(!v)return;let a=read('ta_quests',[]);a.push({id:Date.now(),name:v,done:false});write('ta_quests',a);$('questInput').value='';renderQuests()}
+function renderQuests(){let a=read('ta_quests',[]);$('questList').innerHTML=a.length?a.map(x=>`<label class="check"><input type="checkbox" ${x.done?'checked':''} onchange="toggleQuest(${x.id},this.checked)"><span style="${x.done?'text-decoration:line-through;opacity:.6':''}">${esc(x.name)}</span></label>`).join(''):'<p class="muted">Добавь свои текущие задания.</p>'}
+function toggleQuest(id,v){let a=read('ta_quests',[]);let x=a.find(x=>x.id===id);if(x)x.done=v;write('ta_quests',a);renderQuests()}
+function clearDone(){write('ta_quests',read('ta_quests',[]).filter(x=>!x.done));renderQuests()}
+function lootSearch(){show('market');$('marketSearch').value=$('lootSearch').value;searchMarket()}
+function addNeed(){let v=$('needInput').value.trim();if(!v)return;let a=read('ta_need',[]);a.push({id:Date.now(),name:v});write('ta_need',a);$('needInput').value='';renderNeed()}
+function renderNeed(){let a=read('ta_need',[]);$('needList').innerHTML=a.map(x=>`<div class="item">${esc(x.name)} <button class="secondary" onclick="removeNeed(${x.id})">УБРАТЬ</button></div>`).join('')||'<p class="muted">Список пуст.</p>'}
+function removeNeed(id){write('ta_need',read('ta_need',[]).filter(x=>x.id!==id));renderNeed()}
+const bosses={goons:['Отряд Гунов','Группа из Knight, Big Pipe и Birdeye. Сообщения об их встречах в трекере — пользовательские и могут устаревать.'],reshala:['Ресала','Босс, связанный с локацией Таможня. В игре сопровождается охраной.'],sanitar:['Санитар','Босс локации Берег, связанный с лечебным комплексом.'],shturman:['Штурман','Босс локации Лес.'],tagilla:['Тагилла','Босс локации Завод.'],killa:['Килла','Босс локации Развязка.'],glukhar:['Глухарь','Босс локации Резерв с группой охраны.'],cultists:['Культисты','Особая группа противников, встречающаяся на отдельных локациях и при определённых условиях.']};
+function renderBoss(){let b=bosses[$('bossSelect').value];$('bossInfo').innerHTML=`<h2>${b[0]}</h2><p class="muted">${b[1]}</p><span class="tag">PVE DOSSIER</span>`}
+const loadItems=['Проверить выбранное снаряжение','Взять подходящие магазины и боеприпасы','Проверить лечение и средства восстановления','Взять воду и еду при необходимости','Проверить свободное место в рюкзаке','Уточнить цель рейда и нужные предметы','Проверить время и доступные выходы'];
+function renderLoadout(){let a=read('ta_load',[]);$('loadoutList').innerHTML=loadItems.map((x,i)=>`<label class="check"><input type="checkbox" ${a.includes(i)?'checked':''} onchange="toggleLoad(${i},this.checked)"><span>${x}</span></label>`).join('');let n=a.length;$('loadoutBar').style.width=(n/loadItems.length*100)+'%';$('loadoutProgress').textContent=n+' из '+loadItems.length+' пунктов отмечено.'}
+function toggleLoad(i,v){let a=read('ta_load',[]).filter(x=>x!==i);if(v)a.push(i);write('ta_load',a);renderLoadout()}
+function resetLoadout(){write('ta_load',[]);renderLoadout()}
+function saveRaid(){write('ta_raid',{goal:$('raidGoal').value,memo:$('raidMemo').value});$('raidSaved').textContent='План сохранён.'}
+function saveGeneralNote(){write('ta_general',$('generalNote').value);$('generalSaved').textContent='Заметка сохранена.'}
+function startVoice(){let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$('voiceStatus').textContent='Распознавание речи не поддерживается. Используй текстовую команду ниже.';return}let r=new SR();r.lang='ru-RU';r.interimResults=false;r.onresult=e=>{let t=e.results[0][0].transcript;$('voiceText').value=t;runVoice(t)};r.onerror=e=>$('voiceStatus').textContent='Ошибка распознавания: '+e.error;r.onstart=()=>$('voiceStatus').textContent='Слушаю…';r.start()}
+function runVoiceText(){runVoice($('voiceText').value)}
+function runVoice(t){let s=(t||'').toLowerCase();$('voiceStatus').textContent='Команда: '+t;if(s.includes('гун')){show('goons');return}if(s.includes('барах')||s.includes('цен')||s.includes('найди')){let q=s.replace(/найди|цену|цены|на барахолке|барахолку|предмет/gi,'').trim();show('market');if(q)$('marketSearch').value=q;searchMarket(q);return}if(s.includes('карт')){show('maps');return}if(s.includes('квест')){show('quests');return}if(s.includes('подготов')||s.includes('рейд')){show('loadout');return}if(s.includes('лут')||s.includes('предмет')){show('loot');return}if(s.includes('босс')||s.includes('ресал')||s.includes('санитар')){show('bosses');return}$('voiceStatus').textContent='Не распознал действие. Попробуй одну из команд-примеров.'}
+try{$('note').value=read('ta_note','')}catch(e){}
+if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+renderNeed();renderQuests();renderBoss();renderMap();renderLoadout();loadGoons();
+</script></body></html>

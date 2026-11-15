@@ -1,6 +1,6 @@
 {
   "name": "Tarkov Assistant",
-  "short_name": "Tarkov Assist",
+  "short_name": "Tarkov",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#111612",

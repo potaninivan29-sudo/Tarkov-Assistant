@@ -1,0 +1,9 @@
+{
+  "name": "Tarkov Assistant",
+  "short_name": "Tarkov Assist",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#111612",
+  "theme_color": "#171c18",
+  "description": "PvE companion for Escape from Tarkov"
+}
